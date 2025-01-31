@@ -4,6 +4,7 @@ let list = document.querySelector('#list');
 let nothing = document.querySelector('.form .nothing');
 let completed = document.querySelector('.completed-task');
 let complete = document.querySelector('.completed-list');
+let clear = document.querySelector('.clear');
 
 nothing.style.display = "block"; // Initially show 'List is empty!'
 
@@ -39,6 +40,16 @@ addItem.addEventListener('click', () => {
       complete.appendChild(li);
       li.appendChild(select);
       li.appendChild(item);
+    });
+
+    clear.addEventListener('click', () => {
+      while (list.childElementCount !== 0) {
+        list.removeChild(list.firstChild);
+      }
+      while (complete.childElementCount !== 0) {
+        complete.removeChild(complete.firstChild);
+      }
+      completed.style.display = "none"; // Hide the completed section if empty
     });
   }
 });
