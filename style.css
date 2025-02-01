@@ -2,8 +2,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Times New Roman", Times, serif;
+  font-family: 'Times New Roman', Times, serif;
 }
+
 
 .content {
   display: flex;
@@ -12,17 +13,48 @@
   height: 100vh;
 }
 
-.input {
-  background: linear-gradient(to right, rgb(165, 6, 189), rgb(8, 66, 166));
-  padding: 40px;
-  border-radius: 20px;
-  width: 50%;
+.music {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 5px 10px;
+  border-radius: 10px;
+
 }
 
-.input .title {
+.playsound {
+  width: 20px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.music p {
+  font-weight: 600;
+  margin-bottom: 0 !important;
+}
+
+
+.input,
+.completed-task {
+  margin-top: 100px;
+  background: linear-gradient(to right, rgb(165, 6, 189), rgb(8, 66, 166));
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  border-radius: 20px;
+  height: 60%;
+  Overflow-x: hidden;
+  padding: 40px;
+  margin-right: 60px;
+}
+
+.input .title,
+.completed-task h1 {
+  background: -webkit-linear-gradient(rgb(252, 165, 197), rgb(238, 112, 34));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   text-align: center;
+
   font-size: 50px;
-  color: white;
 }
 
 .input .form {
@@ -32,21 +64,91 @@
 .input .form .input-data {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
+
 .input .form .input-data input {
+  border: none;
+  border-radius: 0 !important;
   padding: 10px;
+  width: 100%;
+  outline: none;
+  padding: 15px 20px !important;
+  font-family: 'Times New Roman', Times, serif;
   font-size: large;
 }
 
-.input .form .bx {
+.input .form .input-data .bx {
+  background: rgb(197, 35, 35);
+  padding: 6px;
   font-size: 28px;
-  cursor: pointer;
+  font-weight: 900;
+  border-radius: 50%;
+  border: 6px solid rgb(197, 35, 35);
 }
+
+.input .form .nothing {
+  margin-top: 20px;
+  color: black;
+  font-size: 30px;
+  text-align: center;
+}
+
+#list {
+  margin-top: 10px;
+  list-style: none;
+}
+
+.lists {
+  border-bottom: 2px solid rgb(197, 35, 25);
+  padding-bottom: 10px;
+  list-style: none;
+  margin: 10px;
+  margin-top: 20px;
+  display: flex;
+}
+
+.lists .para {
+  padding-left: 10px;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(238, 112, 34);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(238, 112, 34, 0.9);
+}
+
 
 .clearAll {
   position: absolute;
   bottom: 10%;
   left: 50%;
   transform: translate(-90%, -50%);
+}
+
+.clearAll .clear {
+  padding: 7px 17px;
+  color: rgb(7, 94, 112);
+  background: white;
+  border: none;
+  box-shadow: 5px 5px 5px rgb(62, 62, 109);
+  cursor: pointer;
+  font-weight: bolder;
+  letter-spacing: 1px;
+  transition: 0.3s;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+}
+
+.clearAll .clear:hover {
+  background: linear-gradient(to right, rgb(72, 5, 138), rgb(148, 136, 5));
+  color: rgb(197, 35, 94);
 }
